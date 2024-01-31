@@ -7,8 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
                      /* container */
 .container{
     height: 100%;
@@ -16,6 +14,31 @@
     position: relative;
 }
 
+.container .menu-btn{
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    height: 45px;
+    width: 45px;
+    z-index: 100;
+    color: #f2f2f2;
+    background: #4a4a4a;
+    border: 1px solid #333;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 23px;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+#btn:checked ~ .menu-btn i:before{
+    content: "\f00d";
+}
 
                     /* sidebar */
 .container #sidebar{
@@ -24,6 +47,17 @@
     width: 270px;
     background: #404040;
     overflow: hidden;
+    left: -270px;
+    transition: all 0.3s ease;
+}
+
+#btn:checked ~  .menu-btn{
+    left: 247px;
+}
+
+#btn:checked ~ #sidebar{
+    left: 0;
+
 }
 
 #sidebar .title{
@@ -57,10 +91,6 @@
     border-top: 1px solid transparent;
 }
 
-
-
-
-
 #sidebar .list-items li a{
     color: #fff;
     text-decoration: none;
@@ -72,7 +102,6 @@
 
 #sidebar .list-items li a i{
     margin-right: 20px;
-
 }
 
 #sidebar .list-items .icons{
